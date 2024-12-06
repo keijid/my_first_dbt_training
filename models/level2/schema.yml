@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: customer_order_analysis
+    description: "顧客の注文分析データ"
+    columns:
+      - name: customer_id
+        description: "顧客ID"
+        tests:
+          - unique
+          - not_null
+      - name: total_orders
+        description: "注文総数"
+        tests:
+          - not_null
+          - positive_values     # test_プレフィックスを削除
+      - name: total_spent
+        description: "総支出額"
+        tests:
+          - not_null
+          - positive_values     # test_プレフィックスを削除
+      - name: customer_segment
+        description: "顧客セグメント"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['VIP', 'Regular', 'New']
+
+  - name: daily_sales_incremental
+    description: "日次売上データ（インクリメンタル）"
+    columns:
+      - name: date_day
+        description: "日付"
+        tests:
+          - unique
+          - not_null
+      - name: orders_count
+        description: "注文数"
+        tests:
+          - not_null
+          - positive_values     # test_プレフィックスを削除

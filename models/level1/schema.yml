@@ -1,0 +1,31 @@
+models:
+  - name: customers_recent
+    columns:
+      - name: customer_id
+        description: カスタマーID
+        data_type: int64
+        quote: true
+      - name: first_name
+        data_type: string
+        quote: true
+      - name: last_name
+        data_type: string
+        quote: true
+      - name: email
+        data_type: string
+        quote: true
+      - name: registration_date
+        data_type: timestamp
+        quote: true
+      - name: country
+        data_type: string
+        quote: true
+      - name: full_name
+        data_type: string
+        quote: true
+      - name: registration_date_only
+        data_type: date
+        quote: true
+      - name: days_since_registration
+        data_type: int64
+        quote: true

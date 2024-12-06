@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: dbt_training
+    database: just-inverter-231705
+    schema: dbt_training
+    tables:
+      - name: customers
+      - name: orders
+      - name: products
+      - name: order_items
